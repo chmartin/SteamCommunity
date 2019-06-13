@@ -93,11 +93,10 @@ def main():
         #open Achievements csv
         itter = 0
         app_df = pd.DataFrame()
-        with open(outfile_directory_name+"/"+str(appid)+"_Achievements.csv","w+",encoding='utf-8') as file3:
-            try:
-                app_df = (pd.read_csv(file3)).drop('Unnamed: 0', axis='columns',errors='ignore')
-            except:
-                pass
+        try:
+            app_df = (pd.read_csv(outfile_directory_name+"/"+str(appid)+"_Achievements.csv",encoding='utf-8')).drop('Unnamed: 0', axis='columns',errors='ignore')
+        except:
+            pass
                 
         #Get User info for App
         for steamid in appid_dict[appid]:
