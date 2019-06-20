@@ -65,8 +65,8 @@ def main():
     # read Pairs to process and fill them into dict
     with open(pairs_file_name, "r+", encoding='utf-8') as file:
         for line in file:
-            app_steam_id_pair = list(map(int, (line.rstrip('\n').split(','))))[1:]
             #print(line)
+            app_steam_id_pair = list(map(int, (line.rstrip('\n').split(','))))[1:]
             #print(app_steam_id_pair)
             appid_dict[app_steam_id_pair[0]].append(app_steam_id_pair[1])
     
